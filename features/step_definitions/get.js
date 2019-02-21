@@ -1,7 +1,10 @@
 const assert = require('assert');
-var request = require('../../HTTPRequests/Get');
+const Request = require('../../HTTPRequests/HTTP');
 const { Given, When, Then } = require('cucumber');
 
+const host = settings.endPoint;
+const resource = '/yourResource';
+let request = new Request(host,resource, "DEV")
 
 function isItFriday(today) {
     return 'Nope';
@@ -26,8 +29,8 @@ When('I ask whether it\'s Friday yet', () => {
         qParam1:"valueQParam1",
         qParam2:"valueQParam2"        
     }
-
-    request.get(templateParams,queryParams);
+    
+    request.get(Request._constructQueryString(request.resource,templateParams,queryParams));
     this.actualAnswer = isItFriday(this.today);    
 });
 
