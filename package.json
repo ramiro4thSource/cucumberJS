@@ -4,11 +4,14 @@
   "description": "tests using cucumber and JS",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js"    
+    "test": "cucumber-js"
   },
   "author": "eseVato",
   "license": "ISC",
   "devDependencies": {
     "cucumber": "^5.1.0"
+  },
+  "dependencies": {
+    "mongodb": "^3.1.13"
   }
 }
